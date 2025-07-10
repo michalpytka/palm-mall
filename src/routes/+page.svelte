@@ -1,4 +1,5 @@
 <script>
+    import { Canvas } from '@threlte/core';
     import Scene from './Scene.svelte'
     export const prerender = true;
     
@@ -6,7 +7,9 @@
 
 
 <div class="canvas-container">
-<Scene/>
+<Canvas>
+  <Scene/>
+</Canvas>
 </div>
 
 <style>
