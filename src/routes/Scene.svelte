@@ -3,34 +3,28 @@
   import { interactivity, OrbitControls, useGltf, Environment } from '@threlte/extras'
   
   interactivity();
-  let rotation = $state(0);
-  
-  useTask((delta) => {
-    rotation += delta
-  })
   
   const mall = useGltf("/src/lib/assets/palm-mall.glb");
 </script>
-
-<T.PerspectiveCamera
-  makeDefault
-  position={[20, 70, 30]}
-  oncreate={(ref) => {
-    ref.lookAt(0, 0, 0)
-  }}
-/>
 
 {#if $mall}
   <T is={$mall.scene}/>
 {/if}
 
 <T.DirectionalLight 
-  position={[0, 10, 10]} 
+  position={[0, 100, 100]} 
   castShadow
 />
 
-<T.PerspectiveCamera makeDefault position={[0, 3, 150]} fov={65}>
-  <OrbitControls />
+<T.PerspectiveCamera 
+  makeDefault 
+  position={[19.839524161174985, 45.62313716607679, 64.22639143722687]}
+  fov={65}>
+  <OrbitControls
+    onchange={(ref) => {
+      console.log(ref.target);
+    }}
+  />
 </T.PerspectiveCamera>
 
 <Environment
