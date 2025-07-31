@@ -53,7 +53,7 @@
     }
 
     function onExitButtonMouseUp() {
-        if (closeWindowFlagStore && $closeWindowFlagStore) {
+        if (closeWindowFlagStore && !$closeWindowFlagStore) {
             closeWindowFlagStore.set(true);
         }
     }
