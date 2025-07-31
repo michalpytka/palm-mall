@@ -2,6 +2,7 @@
     import { Canvas } from '@threlte/core';
     import Scene from './Scene.svelte';
     import Toolbar from './Toolbar.svelte';
+    import LoadingWindow from './Loading-Window.svelte';
 </script>
 
 <div class="page-container">
@@ -9,6 +10,7 @@
         <Scene/>
     </Canvas>
     <Toolbar/>
+    <LoadingWindow/>
 </div>
 
 <style>
@@ -18,7 +20,5 @@
         left: 0;
         width: 100%;
         height: calc(100% - 35px);
-        z-index: -1; /* Ensure canvas is behind other content */
-        background-color: bisque;
     }
 </style>

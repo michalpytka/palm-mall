@@ -15,11 +15,11 @@
   }
 
   .start-button-label {
-    font-family: sans-serif;
     font-weight: 600;
     display: block;
     float: right;
     padding: 2px 5px 0 0;
+    font-family: sans-serif;
   }
 
   .logo {

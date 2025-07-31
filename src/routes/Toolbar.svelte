@@ -43,7 +43,7 @@
         border-width: 3px 0 0 0;
         border-image-source: linear-gradient(to top, #565858, 97%, #ffffff);
         padding-top: 2px;
-  }
+    }
 
     .float-left {
         float: left;

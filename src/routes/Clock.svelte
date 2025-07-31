@@ -18,15 +18,12 @@
   
   
   onMount((): void => {
-    // Update time immediately
     updateTime();
     
-    // Set up interval to update every second
     interval = setInterval(updateTime, 1000);
   });
   
   onDestroy((): void => {
-    // Clean up interval when component is destroyed
     if (interval) {
       clearInterval(interval);
     }

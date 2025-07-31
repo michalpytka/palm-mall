@@ -1,10 +1,15 @@
 <script lang="ts">
-  import { T, useTask } from '@threlte/core'
+  import { T } from '@threlte/core'
   import { interactivity, OrbitControls, useGltf, Environment } from '@threlte/extras'
+  import { hasLoadingFinished } from './Loading-Window-Store'
   
   interactivity();
-  
-  const mall = useGltf("/src/lib/assets/palm-mall.glb");
+
+  const mall = useGltf('/src/lib/assets/palm-mall.glb');
+
+  $: if ($mall) {
+    hasLoadingFinished.set(true);
+  }
 </script>
 
 {#if $mall}
@@ -21,9 +26,8 @@
   position={[19.839524161174985, 45.62313716607679, 64.22639143722687]}
   fov={65}>
   <OrbitControls
-    onchange={(ref) => {
-      console.log(ref.target);
-    }}
+    panSpeed={0.2}
+    rotateSpeed={0.2}
   />
 </T.PerspectiveCamera>
 
