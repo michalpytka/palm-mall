@@ -1,7 +1,7 @@
 <script lang="ts">
   import { T, useTask } from '@threlte/core'
   import { interactivity, OrbitControls, useGltf, Environment } from '@threlte/extras'
-  import { hasLoadingFinished } from './Loading-Window-Store'
+  import { loadingFinished, sceneRotating } from './Page-Stores'
   import { onMount } from 'svelte'
  
   interactivity();
@@ -9,7 +9,7 @@
   
   $effect(() => {
     if ($mall) {
-      hasLoadingFinished.set(true);
+      loadingFinished.set(true);
     }
   });
 
@@ -18,13 +18,12 @@
   const orbitHeight = 16.688164873834864;
   const orbitSpeed = 0.05;
   
-  let isOrbiting = true;
   let orbitAngle = 0
   let cameraRef: any = $state();
   let orbitControlsRef: any = $state();
 
   useTask((delta) => {
-    if (isOrbiting && cameraRef) {
+    if ($sceneRotating && cameraRef) {
       orbitAngle += orbitSpeed * delta
       
       const x = centerPoint.x + Math.cos(orbitAngle) * orbitRadius
@@ -42,14 +41,14 @@
   })
 
   function stopOrbit() {
-    isOrbiting = false
+    sceneRotating.set(false)
     if (orbitControlsRef) {
       orbitControlsRef.enabled = true
     }
   }
 
   function handleCanvasInteraction() {
-    if (isOrbiting) {
+    if ($sceneRotating) {
       stopOrbit()
     }
   }

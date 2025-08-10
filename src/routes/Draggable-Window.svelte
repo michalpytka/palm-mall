@@ -91,6 +91,7 @@
         border-color: #efefef #3a3a3a #3a3a3a #efefef;
         display: grid;
     }
+
     .title {
         height: 25px;
         background-color: #808080;
@@ -110,17 +111,20 @@
         align-items: center;
         margin: 4px 0 0 0;
     }
+
     .content {
         background-color: #c0c0c0;
         height: calc(100% - 29px);
         display: flex;
     }
+
     .logo {
         margin: 1px 0 0 0;
         height: 23px;
         width: 23px;
         float: left;
     }
+    
     .exit-button {
         float: right;
         margin: 4px 3px 0 0;

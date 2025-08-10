@@ -3,12 +3,14 @@
     import Scene from './Scene.svelte';
     import Toolbar from './Toolbar.svelte';
     import LoadingWindow from './Loading-Window.svelte';
+    import StartMenu from './Start-Menu.svelte';
 </script>
 
 <div class="page-container">
     <Canvas>
         <Scene/>
     </Canvas>
+    <StartMenu/>
     <Toolbar/>
     <LoadingWindow/>
 </div>

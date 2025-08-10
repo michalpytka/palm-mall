@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
+  import { sceneRotating } from './Page-Stores';
   
   let currentTime: Date = new Date();
   let interval: NodeJS.Timeout | null = null;
@@ -16,7 +17,6 @@
     });
   }
   
-  
   onMount((): void => {
     updateTime();
     
@@ -28,16 +28,22 @@
       clearInterval(interval);
     }
   });
+
+  function rotateButtonPressed(): void {
+    sceneRotating.set(!$sceneRotating);
+  }
 </script>
 
 <div class="clock-container">
-    <img class="clock-icons" alt="clock icons" src="clock-icons.png">
+    <button class="rotate-button" on:mousedown={rotateButtonPressed}>
+      <img class="rotate-icon" alt="rotate icon" src="rotate-icon.png">
+    </button>
     <span class="clock-text">{formatTime(currentTime)}</span>
 </div>
 
 <style>
     .clock-container {
-        width: 105px;
+        width: 92px;
         height: 22px;
         border: solid;
         border-width: 2px;
@@ -45,8 +51,17 @@
         margin-right: 3px;
     }
 
-    .clock-icons {
+    .rotate-icon {
+        margin-top: 1px;
         height: 20px;
+        width: 23px;
+    }
+
+    .rotate-button {
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
     }
 
     .clock-text {

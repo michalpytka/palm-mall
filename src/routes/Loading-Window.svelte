@@ -1,6 +1,6 @@
 <script lang="ts">
     import DraggableWindow from './Draggable-Window.svelte';
-    import { hasLoadingFinished } from './Loading-Window-Store';
+    import { loadingFinished } from './Page-Stores';
 </script>
 
 <style>
@@ -10,7 +10,7 @@
     }
 </style>
 
-{#if !$hasLoadingFinished}
+{#if !$loadingFinished}
     <DraggableWindow windowHeight={110} windowWidth={200} title="Please wait" iconSrc="wait-icon.png" isClosable={false}>
         <div class="window-content">Interactive background is loading</div>
     </DraggableWindow>
