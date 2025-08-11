@@ -1,11 +1,8 @@
 <script lang="ts">
   import { startMenuVisible } from './Page-Stores';
 
-  let pressed = false;
-
   function handleClick(): void {
     startMenuVisible.set(!$startMenuVisible);
-    pressed = !pressed;
   }
 </script>
 
