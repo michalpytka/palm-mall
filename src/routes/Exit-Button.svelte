@@ -11,6 +11,12 @@
         align-items: center;
         justify-content: center;
         border-color: #efefef #3a3a3a #3a3a3a #efefef;
+        cursor: pointer;
+    }
+
+    .body:active {
+        border-color:  #3a3a3a #efefef #efefef #3a3a3a;
+        margin: 2px 0 0 1px;
     }
 </style>
 

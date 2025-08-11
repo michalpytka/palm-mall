@@ -1,5 +1,5 @@
 <div class="logos-container">
-    <img class="logo" src="logos.png" alt="Bimbows Logos">
+    <img class="logo" src="logos.png" alt="Binbows Logos">
 </div>
 
 <style>

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { startMenuVisible } from './Page-Stores';
+    import { startMenuVisible, creditWindowVisible, calculatorVisible } from './Page-Stores';
     import StartMenuItem from './Start-Menu-Item.svelte';
 
     let menuHeight = $state(200);
@@ -17,33 +17,8 @@
             MichaelSoft Binbows 97
         </div>
         <div class="menu-list">
-            <StartMenuItem>
-                Test
-            </StartMenuItem>
-            <StartMenuItem>
-                Test
-            </StartMenuItem>
-            <StartMenuItem>
-                Test
-            </StartMenuItem>
-            <StartMenuItem>
-                Test
-            </StartMenuItem>
-            <StartMenuItem>
-                Test
-            </StartMenuItem>
-            <StartMenuItem>
-                Test
-            </StartMenuItem>
-            <StartMenuItem>
-                Test
-            </StartMenuItem>
-            <StartMenuItem>
-                Test
-            </StartMenuItem>
-            <StartMenuItem>
-                Test
-            </StartMenuItem>
+            <StartMenuItem title="Credit" icon="paint-icon.png" openWindowFlagStore={creditWindowVisible}/>
+            <StartMenuItem title="Calculator" icon="calculator-icon.png" openWindowFlagStore={calculatorVisible} />
         </div>
     </div>
 {/if}
@@ -57,6 +32,7 @@
         border-width: 2px;
         border-color: #efefef #3a3a3a #3a3a3a #efefef;
         display: flex;
+        margin-left: 3px;
     }
 
     .os-version-bar {
@@ -66,7 +42,7 @@
         writing-mode: tb-rl;
         transform: rotate(-180deg);
         padding: 2px 2px 20px 2px;
-        margin: 1px;
+        margin: 1px 0 1px 1px;
     }
 
     .menu-list {

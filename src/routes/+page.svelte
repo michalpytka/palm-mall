@@ -4,6 +4,8 @@
     import Toolbar from './Toolbar.svelte';
     import LoadingWindow from './Loading-Window.svelte';
     import StartMenu from './Start-Menu.svelte';
+    import CreditWindow from './Credit-Window.svelte';
+    import Calculator from './Calculator.svelte';
 </script>
 
 <div class="page-container">
@@ -13,6 +15,8 @@
     <StartMenu/>
     <Toolbar/>
     <LoadingWindow/>
+    <CreditWindow/>
+    <Calculator/>
 </div>
 
 <style>

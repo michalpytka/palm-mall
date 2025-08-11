@@ -1,7 +1,7 @@
 <script lang="ts">
   import { T, useTask } from '@threlte/core'
   import { interactivity, OrbitControls, useGltf, Environment } from '@threlte/extras'
-  import { loadingFinished, sceneRotating } from './Page-Stores'
+  import { loadingInProgress, sceneRotating } from './Page-Stores'
   import { onMount } from 'svelte'
  
   interactivity();
@@ -9,7 +9,7 @@
   
   $effect(() => {
     if ($mall) {
-      loadingFinished.set(true);
+      loadingInProgress.set(false);
     }
   });
 

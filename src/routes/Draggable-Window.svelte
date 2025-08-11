@@ -11,7 +11,10 @@
     export let title: string;
     export let iconSrc: string;
     export let isClosable: boolean;
-    export let closeWindowFlagStore: Writable<boolean> | undefined = undefined;
+    export let windowVisibleFlagStore: Writable<boolean> | undefined = undefined;
+
+    const borderSizeInPx = 4;
+    const toolbarHeightInPx = 35;
    
     let moving = false;
     let exitButtonDisplay = isClosable ? "block" : "none";
@@ -26,8 +29,8 @@
     }
    
     function onMouseMove(e: { movementX: number; movementY: number; }) {
-        const rightBound = innerWidth - windowWidth;
-        const bottomBound = innerHeight - windowHeight;
+        const rightBound = innerWidth - windowWidth - borderSizeInPx;
+        const bottomBound = innerHeight - windowHeight - borderSizeInPx - toolbarHeightInPx;
         if (moving) {
             if (x >= 0 && x <= rightBound) {
                 x += e.movementX;
@@ -53,8 +56,8 @@
     }
 
     function onExitButtonMouseUp() {
-        if (closeWindowFlagStore && !$closeWindowFlagStore) {
-            closeWindowFlagStore.set(true);
+        if (windowVisibleFlagStore && $windowVisibleFlagStore) {
+            windowVisibleFlagStore.set(false);
         }
     }
 
@@ -94,11 +97,11 @@
 
     .title {
         height: 25px;
-        background-color: #808080;
+        background-image: linear-gradient(to right, #000083, 50%, #0085d8);
         margin: 2px 2px 0 2px;
         border-radius: 1px;
         font-size: 14px;
-        color: #bababa;
+        color: white;
         float: left;
         width: calc(100% - 4px);
         user-select: none;
@@ -139,10 +142,10 @@
     class="toolbar"
 >
     <div role="dialog" tabindex="0" aria-label="Draggable dialog" class="title" on:mousedown={onMouseDown} on:keydown={onKeyDown}>
-        <img class="logo" src={iconSrc} alt="Bimbows Logo">
+        <img class="logo" src={iconSrc} alt="Binbows Logo">
         <div class="title-text">{title}</div>
         <div class="exit-button" role="dialog" tabindex="0" style="display: {exitButtonDisplay}" on:mouseup={onExitButtonMouseUp}>
-            <ExitButton></ExitButton>
+            <ExitButton/>
         </div>
     </div>
     <div class="content">

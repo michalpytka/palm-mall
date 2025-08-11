@@ -10,7 +10,7 @@
 </script>
 
 <button class="start-button" onclick={handleClick}>
-  <div class="start-button-container" class:pressed>
+  <div class="start-button-container" class:pressed={$startMenuVisible}>
     <img class="logo" src="binbows-logo.png" alt="Binbows Logo">
     <span class="start-button-label">Start</span>
   </div>
@@ -42,12 +42,12 @@
   }
 
   .start-button {
-      height: 24px;
-      width: 75px;
-      background: none;
-      border: none;
-      padding: 0;
-      cursor: pointer;
+    height: 24px;
+    width: 75px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
   }
 
   .logo {
