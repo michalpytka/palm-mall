@@ -6,8 +6,11 @@
 <style>
     .window-content {
         font-family: sans-serif;
-        width: 100%;
         text-align: center;
+        flex-direction: column;
+        display: flex;
+        width: 100%;
+        margin-top: 10px;
     }
 
     .title-font {

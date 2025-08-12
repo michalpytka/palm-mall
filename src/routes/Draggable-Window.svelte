@@ -86,13 +86,14 @@
 </script>
 
 <style>
-    .toolbar {
+    .window {
         position: absolute;
         border: solid;
         background-color: #c0c0c0;
         border-width: 2px;
         border-color: #efefef #3a3a3a #3a3a3a #efefef;
         display: grid;
+        grid-template-rows: auto 1fr;
     }
 
     .title {
@@ -117,7 +118,6 @@
 
     .content {
         background-color: #c0c0c0;
-        height: calc(100% - 29px);
         display: flex;
     }
 
@@ -139,7 +139,7 @@
 <div 
     tabindex="-1" 
     style="left: {x}px; top: {y}px; width: {windowWidth}px; height: {windowHeight}px;" 
-    class="toolbar"
+    class="window"
 >
     <div role="dialog" tabindex="0" aria-label="Draggable dialog" class="title" on:mousedown={onMouseDown} on:keydown={onKeyDown}>
         <img class="logo" src={iconSrc} alt="Binbows Logo">

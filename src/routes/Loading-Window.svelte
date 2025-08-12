@@ -7,6 +7,8 @@
     .window-content {
         font-family: sans-serif;
         text-align: center;
+        align-items: center;
+        display: flex;
     }
 </style>
 
