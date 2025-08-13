@@ -5,7 +5,7 @@
   import { onMount } from 'svelte'
  
   interactivity();
-  const mall = useGltf('${base}/palm-mall.glb');
+  const mall = useGltf('palm-mall.glb');
   
   $effect(() => {
     if ($mall) {
