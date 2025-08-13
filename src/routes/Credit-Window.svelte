@@ -27,7 +27,7 @@
 </style>
 
 {#if $creditWindowVisible}
-    <DraggableWindow windowHeight={260} windowWidth={200} title="Credit" iconSrc="paint-icon.png" isClosable={true} windowVisibleFlagStore={creditWindowVisible}>
+    <DraggableWindow windowHeight={270} windowWidth={200} title="Credit" iconSrc="paint-icon.png" isClosable={true} windowVisibleFlagStore={creditWindowVisible}>
         <div class="window-content">
             <div class="title-font">Page author</div>
             <div class="regular-font">Michał P.</div>
